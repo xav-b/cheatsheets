@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+
+_die() {
+  echo "$1" | gum format -t template
+  exit 1
+}
+
+if [[ -z "$CHEAT_WORKSPACE" ]]; then
+  _die '{{ Bold "Please export CHEAT_WORKSPACE" }}'
+fi
+
+test -d "$CHEAT_WORKSPACE" || _die '{{ Bold "$CHEAT_WORKSPACE is not a valid directory" }}'
+
+sheet="$1"
+
+if [[ -z "$1" ]]; then
+  echo '{{ Bold "Select your cheatsheet..." }}' | gum format -t template
+
+  # select the cheatsheet
+  # sheet="$(ls $CHEAT_WORKSPACE -type f | gum filter)"
+  # FIXME: sheet=$(find $CHEAT_WORKSPACE -type f | sed -r \"s:^$CHEAT_WORKSPACE/::\")
+  # this will let glow to autofind markdown files and let you select
+  # but we lose filtering so that won't scale i think
+  sheet=""
+
+else
+  # expect a friendly name, add extension
+  sheet="${sheet}.md"
+fi
+
+# render it on thec ommand line
+glow "${CHEAT_WORKSPACE}/${sheet}"
