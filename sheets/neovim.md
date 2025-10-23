@@ -7,25 +7,31 @@
 
 **Toggle explorer**: `Space + e` (`Space + o` to focus)
 
+**Quit all windows**: `Leader + Q`
 **Close buffer**: `Leader + c`
 
 **Telescope grep**: `Leader + fw`
+
+**Toggle wrap**: `Leader + uw`
+
+**Move to previous places**: Hit `'` and look at possible places for the second entries
 
 ## Code
 
 **Commenting**: `Leader + /`
 
 **Symbols Outline**: `Leader + lS`
+**Search Symbols**: `Leader + ls`
 
 **Blame Line**: `Leader + gl`
 
 **Git Diff**: `Leader + gd`
 
+**Disable autoformatting**: `Leader + uf`
+
 ## Terminal
 
-**Open terminal**: `F7`
-
-**Floating Terminal**: `Leader + tf`
+**Open terminal**: `F7` or `Leader + tf`
 
 **Horizontal Split Terminal**: `Leader + th`
 
@@ -35,9 +41,12 @@
 
 **LazyGit**: `Leader + tl` | `Leader + gg`
 
+**BTM**: `Leader + tt`
+
 
 ## Diagnostics
 
+**Search symbols**: `Space + ls`
 **Opening LSP symbols**: `Space + lS`
 
 **Show line diagnostics**: `g + l`
@@ -53,3 +62,15 @@
 **LSP Info**: `Leader + li`
 
 **Null-ls Info**: `Leader + lI`
+
+## Search
+
+- **Word under cursor**: `leader fc` (live grep: `leader fW`)
+- **Commands**: `leader fC`
+- **Registers**: `leader fr`
+
+## Split window
+
+- Split horizontally: `CTRL-w s` or `\` (vertical: `|`)
+- To navigate, use the usual `jk`, prefixed by CTRL-w
+- Likewise, close with `CTRL-w q`
